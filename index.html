@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Genizy Game Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #000;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    h1 { margin: 20px; }
+
+    button {
+        margin: 10px;
+        padding: 15px 30px;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        color: #fff;
+        background: linear-gradient(270deg, #ff0000, #00ff00, #0000ff, #ff0000);
+        background-size: 600% 600%;
+        animation: moveGradient 4s linear infinite;
+        transition: all 0.3s;
+        position: relative;
+    }
+
+    button:hover {
+        color: #fff;
+        background: #000;
+        box-shadow: 0 0 15px 3px rgba(255,0,0,0.8),
+                    0 0 15px 3px rgba(0,255,0,0.8),
+                    0 0 15px 3px rgba(0,0,255,0.8);
+    }
+
+    @keyframes moveGradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+</style>
+</head>
+<body>
+
+<h1>Genizy Game Hub</h1>
+
+<button onclick="openGame('baldi-plus')">Baldi+</button>
+<button onclick="openGame('bendy')">Bendy</button>
+<button onclick="openGame('hotline-miami')">Hotline Miami</button>
+<button onclick="openGame('kindergarten/1')">Kindergarten 1</button>
+<button onclick="openGame('kindergarten/2')">Kindergarten 2</button>
+<button onclick="openGame('ultrakill')">Ultrakill</button>
+
+<script>
+function openGame(folder) {
+    const url = 'https://notfunny274.github.io/zzz/' + folder + '/';
+    const newWindow = window.open(url, '_blank');
+    if(newWindow) newWindow.focus();
+}
+</script>
+
+</body>
+</html>
